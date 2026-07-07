@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 const description = profile.summary;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://manjunath-itagi.dev"),
+  metadataBase: new URL("https://manjunathitagi.vercel.app"),
   title: {
     default: `${profile.name} — ${profile.role}`,
     template: `%s — ${profile.name}`,
