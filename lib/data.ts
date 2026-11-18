@@ -10,6 +10,8 @@ export const profile = {
   phone: "+91 8951096577",
   linkedin: "https://www.linkedin.com/in/manjunath-itagi",
   linkedinLabel: "in/manjunath-itagi",
+  github: "https://github.com/2002Manju",
+  githubLabel: "github.com/2002Manju",
   resume: "/Manjunath_Itagi_FullStack_Resume.pdf",
   avatar: "/manjunath.jpeg",
   available: true,
@@ -125,12 +127,13 @@ export const experiences: Experience[] = [
     company: "Ultimez Technology",
     meta: "EduPath — Learning Management System",
     location: "Hubli",
-    period: "Apr 2024 — Jun 2024",
+    period: "Apr 2024 — Sep 2024",
     points: [
-      "Built the responsive frontend of EduPath, an online Learning Management System, using React, HTML, CSS, JavaScript and Bootstrap.",
-      "Collaborated with senior developers on UI and accessibility, and took part in peer code reviews.",
+      "Completed a 6-month frontend internship building EduPath, an online Learning Management System, using React, JavaScript, HTML5, CSS3, and Bootstrap.",
+      "Developed interactive course viewers, typography and color-model learning modules (RGB, HEX, HSL), and student portal interfaces.",
+      "Collaborated with senior developers on UI/UX accessibility standards (WCAG) and actively took part in peer code reviews and agile sprints.",
     ],
-    tech: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"],
+    tech: ["React", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
   },
 ];
 
@@ -142,21 +145,69 @@ export type Project = {
   tech: string[];
   accent: string; // tailwind gradient stops
   featured?: boolean;
+  github?: string;
+  live?: string;
 };
 
 export const projects: Project[] = [
+  {
+    name: "AI Job Hunt Agent",
+    category: "AI · Full Stack · Agentic System",
+    blurb:
+      "An autonomous AI-driven job discovery, resume intelligence, and semantic candidate matching platform built with FastAPI, Next.js, and Supabase pgvector.",
+    highlights: [
+      "Vector similarity semantic matching via Supabase pgvector",
+      "Pluggable AI layer with Gemini, Groq, OpenRouter & local Ollama failover",
+      "Deterministic 7-factor scoring engine with automated Telegram alerts",
+    ],
+    tech: ["FastAPI", "Next.js", "Python", "PostgreSQL", "pgvector", "TypeScript", "Tailwind CSS"],
+    accent: "from-emerald-400/25 to-teal-400/10",
+    featured: true,
+  },
   {
     name: "Trading CRM & Back-Office Suite",
     category: "Fintech · Internal Product",
     blurb:
       "The company's core internal platform for a stock-broking business — a trading CRM, back-office services and a client-facing \"Pocket\" dashboard, built across a Next.js frontend and Django/DRF/FastAPI backends.",
     highlights: [
-      "Support-desk with ticket-priority routing",
-      "\"Pocket\" client dashboard features",
-      "JWT-secured REST APIs on PostgreSQL + Redis",
+      "Support-desk with ticket-priority routing and SLA tracking",
+      "\"Pocket\" client dashboard features & trading account tools",
+      "JWT-secured REST APIs on PostgreSQL + Redis caching",
     ],
     tech: ["Next.js", "TypeScript", "Django", "FastAPI", "PostgreSQL", "Redis"],
-    accent: "from-emerald-400/20 to-cyan-400/10",
+    accent: "from-cyan-400/20 to-blue-400/10",
+    featured: true,
+  },
+  {
+    name: "EduPath LMS",
+    category: "EdTech · Frontend Platform",
+    blurb:
+      "An interactive web-based Learning Management System with rich course tracks, interactive CSS color playgrounds (RGB, HEX, HSL), student portal, and responsive UI.",
+    highlights: [
+      "Interactive coding modules and real-time color model playgrounds",
+      "Comprehensive curriculum browser covering HTML5, CSS3 & web design",
+      "Fully responsive and accessible layout deployed live on Vercel",
+    ],
+    tech: ["React", "JavaScript", "Bootstrap", "HTML5", "CSS3", "Vercel"],
+    accent: "from-amber-400/20 to-orange-400/10",
+    github: "https://github.com/2002Manju/Edupath",
+    live: "https://edupath-tan.vercel.app",
+    featured: true,
+  },
+  {
+    name: "Developer Portfolio",
+    category: "Web · Modern Architecture",
+    blurb:
+      "Personal portfolio built with Next.js 15 App Router, React 19, Motion (Framer Motion), and Tailwind CSS v4, featuring a dark fintech aesthetic and smooth scroll reveals.",
+    highlights: [
+      "Bento-grid design, custom SVG icon system, and glow ambient backdrops",
+      "Zero heavyweight UI libraries — optimized for performance and Core Web Vitals",
+      "Fully responsive, dark-mode first, and prefers-reduced-motion compatible",
+    ],
+    tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS v4", "Motion"],
+    accent: "from-violet-400/20 to-purple-400/10",
+    github: "https://github.com/2002Manju/portfolio",
+    live: "https://portfolio-six-alpha-42.vercel.app",
     featured: true,
   },
   {
@@ -165,13 +216,12 @@ export const projects: Project[] = [
     blurb:
       "End-to-end tax-compliance tooling to capture and reconcile client FATCA/KYC data — a Next.js UI backed by FastAPI handlers and a scheduled Django sync job.",
     highlights: [
-      "Full-stack: UI, API handlers & sync job",
-      "Scheduled reconciliation of tax data",
-      "Automated WhatsApp KYC-count reporting",
+      "Full-stack: UI, API handlers & scheduled background sync jobs",
+      "Scheduled reconciliation of client tax-compliance data",
+      "Automated WhatsApp KYC-count reporting via Django CRON",
     ],
     tech: ["Next.js", "FastAPI", "Django", "CRON", "PostgreSQL"],
-    accent: "from-cyan-400/20 to-blue-400/10",
-    featured: true,
+    accent: "from-cyan-400/20 to-teal-400/10",
   },
   {
     name: "HR & Payroll Platform",
@@ -179,13 +229,12 @@ export const projects: Project[] = [
     blurb:
       "A Django + React/MUI platform automating the full HR lifecycle — payroll, statutory documents, attendance and leave — with Celery-driven approvals and notifications.",
     highlights: [
-      "Payslip & Form 16 generation (WeasyPrint / React-PDF)",
-      "Punch-based attendance engine",
-      "Leave management with Celery approvals + email",
+      "Automated payslip & Form 16 generation (WeasyPrint / React-PDF)",
+      "Punch-based biometric attendance engine with holiday calendar",
+      "Leave management with Celery-driven multi-level approvals + email",
     ],
     tech: ["Django", "React", "Material UI", "Celery", "WeasyPrint"],
     accent: "from-teal-400/20 to-emerald-400/10",
-    featured: true,
   },
   {
     name: "Reports & Analytics Engine",
@@ -193,25 +242,12 @@ export const projects: Project[] = [
     blurb:
       "Trading-activity and brokerage reporting across a React frontend and FastAPI report handlers — surfacing clients-traded, first-time-trader and new-client metrics.",
     highlights: [
-      "Brokerage charges-calculation engine",
-      "First-time-trader & clients-traded metrics",
-      "Recharts visualizations + bug fixes",
+      "Brokerage charges-calculation engine and calculation bug fixes",
+      "First-time-trader & clients-traded metrics aggregation",
+      "Interactive Recharts visualizations and Pandas analytical processing",
     ],
     tech: ["React", "FastAPI", "Recharts", "Pandas", "PostgreSQL"],
-    accent: "from-violet-400/20 to-fuchsia-400/10",
-  },
-  {
-    name: "EduPath LMS",
-    category: "EdTech · Frontend",
-    blurb:
-      "A responsive frontend for an online Learning Management System, built during a frontend internship with a focus on UI and accessibility.",
-    highlights: [
-      "Responsive, accessible course UI",
-      "Built with React + Bootstrap",
-      "Peer code reviews with senior devs",
-    ],
-    tech: ["React", "JavaScript", "Bootstrap", "HTML", "CSS"],
-    accent: "from-amber-400/20 to-orange-400/10",
+    accent: "from-blue-400/20 to-indigo-400/10",
   },
 ];
 

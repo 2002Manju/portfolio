@@ -2,7 +2,7 @@
 
 import { profile } from "@/lib/data";
 import { Reveal } from "./Reveal";
-import { ArrowUpRight, Download, Linkedin, Mail, MapPin, Phone } from "./icons";
+import { ArrowUpRight, Download, Github, Linkedin, Mail, MapPin, Phone } from "./icons";
 
 const channels = [
   {
@@ -12,16 +12,22 @@ const channels = [
     Icon: Mail,
   },
   {
-    label: "Phone",
-    value: profile.phone,
-    href: `tel:${profile.phone.replace(/\s/g, "")}`,
-    Icon: Phone,
-  },
-  {
     label: "LinkedIn",
     value: profile.linkedinLabel,
     href: profile.linkedin,
     Icon: Linkedin,
+  },
+  {
+    label: "GitHub",
+    value: profile.githubLabel,
+    href: profile.github,
+    Icon: Github,
+  },
+  {
+    label: "Phone",
+    value: profile.phone,
+    href: `tel:${profile.phone.replace(/\s/g, "")}`,
+    Icon: Phone,
   },
   {
     label: "Location",

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { heroSnippet, profile, stats } from "@/lib/data";
-import { ArrowRight, Download, MapPin, Linkedin, Mail } from "./icons";
+import { ArrowRight, Download, MapPin, Linkedin, Mail, Github } from "./icons";
 
 export function Hero() {
   return (
@@ -104,6 +104,15 @@ export function Hero() {
             >
               <Linkedin width={16} height={16} className="text-[var(--color-accent)]" />
               LinkedIn
+            </a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--color-fg)]"
+            >
+              <Github width={16} height={16} className="text-[var(--color-accent)]" />
+              GitHub
             </a>
           </motion.div>
         </div>

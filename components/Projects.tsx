@@ -3,7 +3,7 @@
 import { projects } from "@/lib/data";
 import { SectionHeading } from "./SectionHeading";
 import { itemVariants, StaggerGroup } from "./Reveal";
-import { ArrowUpRight } from "./icons";
+import { ArrowUpRight, Github, Globe } from "./icons";
 import { motion } from "motion/react";
 
 export function Projects() {
@@ -47,9 +47,21 @@ export function Projects() {
                         {project.name}
                       </h3>
                     </div>
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-[var(--color-line)] bg-[var(--color-panel-2)] text-[var(--color-muted)] transition-all duration-300 group-hover:border-[var(--color-accent)]/40 group-hover:text-[var(--color-accent)]">
-                      <ArrowUpRight width={18} height={18} />
-                    </span>
+                    {project.live || project.github ? (
+                      <a
+                        href={project.live || project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`Open ${project.name}`}
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-[var(--color-line)] bg-[var(--color-panel-2)] text-[var(--color-muted)] transition-all duration-300 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)]"
+                      >
+                        <ArrowUpRight width={18} height={18} />
+                      </a>
+                    ) : (
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-[var(--color-line)] bg-[var(--color-panel-2)] text-[var(--color-muted)] transition-all duration-300 group-hover:border-[var(--color-accent)]/40 group-hover:text-[var(--color-accent)]">
+                        <ArrowUpRight width={18} height={18} />
+                      </span>
+                    )}
                   </div>
 
                   <p
@@ -86,6 +98,34 @@ export function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {(project.github || project.live) && (
+                    <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-[var(--color-line)] pt-4">
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-line)] bg-[var(--color-panel-2)] px-3 py-1.5 text-xs font-medium text-[var(--color-fg)] transition-all hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)]"
+                        >
+                          <Globe width={14} height={14} className="text-[var(--color-accent)]" />
+                          Live Demo
+                          <ArrowUpRight width={13} height={13} />
+                        </a>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-line)] bg-[var(--color-panel-2)] px-3 py-1.5 text-xs font-medium text-[var(--color-muted)] transition-all hover:border-[var(--color-accent)]/40 hover:text-[var(--color-fg)]"
+                        >
+                          <Github width={14} height={14} />
+                          GitHub Repo
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </motion.article>
             );

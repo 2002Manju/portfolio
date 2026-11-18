@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { navLinks, profile } from "@/lib/data";
-import { Close, Download, Menu } from "./icons";
+import { Close, Download, Github, Menu } from "./icons";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,6 +55,15 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub Profile"
+            className="hidden h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-line)] bg-[var(--color-panel-2)] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-fg)] sm:flex"
+          >
+            <Github width={18} height={18} />
+          </a>
+          <a
             href={profile.resume}
             download
             className="hidden items-center gap-2 rounded-xl border border-[var(--color-line)] bg-[var(--color-panel-2)] px-4 py-2 text-sm font-medium text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)] sm:flex"
@@ -92,6 +101,15 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 rounded-xl px-4 py-3 text-[15px] text-[var(--color-muted)] transition-colors hover:bg-[var(--color-panel-2)] hover:text-[var(--color-fg)]"
+            >
+              <Github width={16} height={16} />
+              GitHub
+            </a>
             <a
               href={profile.resume}
               download

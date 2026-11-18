@@ -1,5 +1,5 @@
 import { navLinks, profile } from "@/lib/data";
-import { Linkedin, Mail } from "./icons";
+import { Github, Linkedin, Mail } from "./icons";
 
 export function Footer() {
   return (
@@ -49,6 +49,14 @@ export function Footer() {
                 className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-fg)]"
               >
                 <Linkedin width={15} height={15} /> LinkedIn
+              </a>
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-fg)]"
+              >
+                <Github width={15} height={15} /> GitHub
               </a>
             </div>
           </div>
